@@ -7,7 +7,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{C5BAD9
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra.IoC", "Infra.IoC", "{75539D0A-6A34-49DE-AD85-2FF90BF22A31}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra.Bus", "Infra.Bus", "{75539D0A-6A34-49DE-AD85-2FF90BF22A31}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infra.Bus", "Infra.Bus", "{3E8DF772-F70B-4076-84A3-C1DFA9FB06CB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Microservices", "Microservices", "{79F254FB-7592-4B65-8694-504B5B4580F4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{ED53FAC4-B4F3-4A4E-977F-391428A12509}"
 EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
