@@ -15,7 +15,7 @@ namespace RabbitMQ.Infra.IoC
         public static void  RegisterServices(IServiceCollection services)
         {
             //Doman Bus
-            services.AddTransient<IEventBus, RabbitMQBus>()
+            services.AddTransient<IEventBus, RabbitMQBus>();
         }
     }
 }
