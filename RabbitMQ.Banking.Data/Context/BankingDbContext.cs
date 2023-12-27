@@ -9,7 +9,7 @@ namespace RabbitMQ.Banking.Data
         {
 
         }
-        public BankingDbContext(DbContextOptions<BankingDbContext> options) : base(options)
+        public BankingDbContext(DbContextOptions options) : base(options)
         {
 
         }
@@ -20,8 +20,6 @@ namespace RabbitMQ.Banking.Data
                 optionsBuilder.UseNpgsql("Server=localhost;Database=EFPostgres;User Id=gkhn;Password=12345;Port=5432;");
             }
             base.OnConfiguring(optionsBuilder);
-
-
         }
         public DbSet<Account> Accounts { get; set; }
 

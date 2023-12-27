@@ -1,3 +1,4 @@
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 using RabbitMQ.Banking.Data;
 using RabbitMQ.Infra.IoC;
@@ -16,33 +17,25 @@ DependencyContainer.RegisterServices(builder.Services);
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c=>
+{
+    c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "RabbitMQ.Banking.Api", Version = "v1" });
+});
+builder.Services.AddMediatR(x => x.RegisterServicesFromAssemblies(typeof(Program).Assembly));
 
 var app = builder.Build();
 
-// Manually perform migrations at design-time
-using (var scope = app.Services.CreateScope())
-{
-    var services = scope.ServiceProvider;
 
-    try
-    {
-        var dbContext = services.GetRequiredService<BankingDbContext>();
-        dbContext.Database.Migrate();
-        // Other DbContext-related operations can be performed here
-    }
-    catch (Exception ex)
-    {
-        // Handle exceptions if any occur during DbContext creation or migration
-        Console.WriteLine("An error occurred while migrating the database: " + ex.Message);
-    }
-}
+
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(c=>{
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "RabbitMQ.Banking.Api v1");
+    });
 }
 
 app.UseAuthorization();
