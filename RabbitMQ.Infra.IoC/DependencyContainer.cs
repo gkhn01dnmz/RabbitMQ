@@ -4,6 +4,7 @@ using System.ComponentModel.Design;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MediatR;
 using MicroRabbit.Domain.Core.Bus;
 using MicroRabbit.Infro.Bus;
 using Microsoft.Extensions.DependencyInjection;
@@ -20,8 +21,12 @@ namespace RabbitMQ.Infra.IoC
             //Doman Bus
             services.AddTransient<IEventBus, RabbitMQBus>();
 
+            //Domain Banking Commands
+            services.AddTransient<IRequestHandler<CreateTransferCommand, bool>, TransferCommandHandler>();
+
+
             //Application Services
-            services.AddTransient<AccountService, AccountService>();
+            services.AddTransient<IAccountService, AccountService>();
 
             //Data
 

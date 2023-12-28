@@ -2,7 +2,8 @@
 
 namespace RabbitMQ.Banking.Application;
 
-public interface   IAccountServices
+public interface   IAccountService
 {
     IEnumerable<Account> GetAccounts();
+    void Transfer(AccountTransfer accountTransfer);
 }

@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MediatR" Version="12.0.1" />
+    <PackageReference Include="MediatR" Version="11.1.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.1.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.5">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -20,6 +20,7 @@
   <ItemGroup>
     <ProjectReference Include="..\RabbitMQ.Infra.IoC\RabbitMQ.Infra.IoC.csproj" />
     <ProjectReference Include="..\RabbitMQ.Banking.Data\RabbitMQ.Banking.Data.csproj" />
+    <ProjectReference Include="..\RabbitMQ.Banking.Application\RabbitMQ.Banking.Application.csproj" />
   </ItemGroup>
 
 </Project>

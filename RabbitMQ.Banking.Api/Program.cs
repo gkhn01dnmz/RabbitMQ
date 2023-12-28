@@ -21,7 +21,7 @@ builder.Services.AddSwaggerGen(c=>
 {
     c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "RabbitMQ.Banking.Api", Version = "v1" });
 });
-builder.Services.AddMediatR(x => x.RegisterServicesFromAssemblies(typeof(Program).Assembly));
+builder.Services.AddMediatR(typeof(Program));
 
 var app = builder.Build();
 
